@@ -1,0 +1,211 @@
+@import './variables.scss';
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+html {
+    height: 100%;
+}
+
+body {
+    background-color: $color-one;
+    color: $color-two;
+    font-family: $font-family-primary;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    height: 100%;
+}
+
+ul,
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+fieldset {
+  border: 0;
+  outline: 0;
+  margin: 0;
+}
+
+// helper classes
+.holder {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+// module space
+.mod { padding-top: 40px;
+
+    & .mod {  padding-top: 0; }
+
+    &:last-child { padding-bottom: 40px; }
+}
+
+// float
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.cf::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+// visibility
+.hidden {
+    display: none;
+}
+
+// alignment
+.text-center {
+    text-align: center;
+}
+
+// font, text and titles
+.text {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 14px;
+
+    &.text-sm {
+        font-size: 12px;
+    }
+}
+
+.sub-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0;
+    padding: 20px 0 10px;
+
+    &.sub-title-sm {
+        font-size: 20px;
+        padding: 0;
+    }
+
+    &.sub-title-xs {
+        font-size: 14px;
+        padding: 0;
+    }
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+// cta
+.cta {
+    padding: 6px 20px;
+    background: $color-eight;
+    border: 1px solid $color-nine;
+    outline: none;
+    border-radius: 5px;
+    font-weight: 700;
+    color: $color-one;
+    cursor: pointer;
+
+    &.cta-smp {
+        background: transparent;
+        border: none;
+        padding: 0;
+    }
+}
+
+// icon
+.icon {
+  display: inline-block;
+  max-width: 20px;
+  max-height: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+//forms
+.input-element {
+    &_input {
+        width: 100%;
+        padding: 6px 10px;
+        background-color: $color-four;
+        border: 1px solid $color-five;
+        border-radius: 5px;
+        outline: none;
+        font-size: 14px;
+    }
+
+    &_checkbox,
+    &_radio {
+        margin-left: 20px;
+
+        & .label { vertical-align: middle; }
+
+        &-input { vertical-align: middle; }
+    }
+
+    &_slider,
+    &_slider:focus,
+    &_slider:hover {
+        & .vue-slider-process {
+            background-color: $color-three;
+        }
+
+        & .vue-slider-dot-handle {
+            border-color: $color-three;
+        }
+    }
+
+    &_error { color: $color-six; }
+
+    & .label {
+        vertical-align: middle;
+        padding: 0 5px;
+    }
+}
+
+// display
+.inline-bl {
+  display: inline-block;
+}
+
+// global modules
+#app {
+    margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#main {
+    flex-grow: 1;
+}
+
+#site-header,
+#site-footer {
+    background: $color-three;
+    color: $color-one;
+}
+
+#site-header {
+    & .sub-title { padding: 10px 0; }
+}
+
+#site-footer {
+    & .text { padding: 10px 0;  }
+}
