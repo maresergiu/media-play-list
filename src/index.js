@@ -7,6 +7,8 @@ import * as serviceWorker from './serviceWorker';
 import './scss/main.scss';
 import './scss/libs/normalize.scss';
 
+require('dotenv').config();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

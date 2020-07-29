@@ -1,3 +1,11 @@
+## How to install the project
+In order to install the app you have to run ``npm i`` twice:
+1. run ``npm i`` in the root directory
+1. run ``npm i`` in the /api directory
+
+After both folders have their node_modules in the project root directory run ``npm run start-app``.
+This command will start the app and the website API in the same time.
+
 ## Available Scripts
 
 In the project directory, you can run:

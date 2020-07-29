@@ -6,6 +6,10 @@ require('dotenv').config();
 
 const app = express();
 
+// reasons why I have created this API:
+// - to simulate a real development env
+// - to overcome the CORS problem that the openwhyd API brings
+
 app.listen(process.env.API_PORT, () => console.log(`Server Running on ${process.env.API_PORT}!`))
 
 app.use(function (req, res, next) {

@@ -1,46 +1,26 @@
 import React, { Component } from 'react';
-import axios from "axios";
+import PropTypes from "prop-types";
+import MediaListElement from "./MediaListElement.jsx";
+import "../scss/components/media-list.scss";
 
 class MediaList extends Component {
     state = {}
     render() {
         return (
-            <div>Media List</div>
+            <React.Fragment>
+                <h2>{this.props.title} list</h2>
+                <ul>
+                    {this.props.mediaList.map(el => {
+                        return <MediaListElement key={el._id} mediaData={el} />
+                    })}
+                </ul>
+            </React.Fragment>
         );
     }
+}
 
-    async logIn() {
-        await axios.get("http://localhost:3001/api/login")
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(e => console.log(e));
-    }
-
-    async getHotList() {
-        axios.get("http://localhost:3001/api/hot/electro")
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(e => console.log(e));
-    }
-
-    async componentDidMount() {
-        await this.logIn();
-        this.getHotList();
-
-        // axios
-        //     .get("https://openwhyd.org/hot/[electro]?format=json")
-        //     .then(response => {
-        //         console.log(response.data);
-        //     })
-        //     .catch(() => {
-        //     })
-        //     .then(() => {
-        //         // hide the loader
-        //         // this.setLoaderVisibility(false);
-        //     });
-    }
+MediaList.propTypes = {
+    mediaList: PropTypes.array.isRequired
 }
 
 export default MediaList;
