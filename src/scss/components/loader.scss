@@ -1,0 +1,19 @@
+@import '../variables.scss';
+@import '../keyframes.scss';
+
+// loader
+.loader { position: fixed; top: 0; left: 0; display: none; width: 100%; height: 100%; z-index: 10; background-color: rgba(0,0,0,0.3);
+
+    &-circle { position: fixed; top: 50%; left: 50%; width: 50px; height: 50px; border: 8px solid $color-five; z-index: 11; border-top-color: $color-three; border-radius: 50%;
+
+        &:nth-child(2) { border-color: transparent; border-bottom-color: $color-three; z-index: 12; }
+    }
+
+    &.active { display: block;
+
+        & .loader-circle { transform-origin: center; animation: data-filter-global-rotate 1s linear infinite; animation-iteration-count: infinite;
+
+            &:nth-child(2) { animation-direction: reverse; }
+        }
+    }
+}
