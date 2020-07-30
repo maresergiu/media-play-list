@@ -15,7 +15,9 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="home-page">
+      <div
+        data-testid="home-page"
+        className="home-page">
         <div className="holder">
           <h2 className="sub-title">Home page!</h2>
           <p className="text">{this.state.httpMessage}</p>

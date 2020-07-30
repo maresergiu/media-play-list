@@ -53,11 +53,13 @@ class YouTubeVideo extends Component {
       window.onYouTubeIframeAPIReady = this.loadVideo
 
       const firstScriptTag = document.getElementsByTagName("script")[0]
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+      firstScriptTag && firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
     } else {
       // If script is already there, load the video directly
       this.loadVideo()
     }
+
+    const { watch } = this.props;
   }
 
   componentWillReceiveProps(nextProps) {

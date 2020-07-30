@@ -8,7 +8,9 @@ const loaderClass = (loaderVisibility) =>
 
 const Loader = ({ loaderVisibility }) => {
   return (
-    <div className={loaderClass(loaderVisibility)}>
+    <div
+      data-testid="loader"
+      className={loaderClass(loaderVisibility)}>
       <div className="loader-circle"></div>
       <div className="loader-circle"></div>
     </div>
