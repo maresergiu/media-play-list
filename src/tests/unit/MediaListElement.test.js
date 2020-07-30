@@ -26,7 +26,7 @@ test("should display the name property ", () => {
     )
 
   const nameProperty = container.querySelector(
-    "[data-testid=media-list-elemen-name]"
+    "[data-testid=media-list-element-name]"
   ).innerHTML
 
   expect(nameProperty.indexOf(mediaObj.name) > -1).toBe(true)
@@ -41,7 +41,7 @@ test("should display the score property ", () => {
     )
 
   const scoreProperty = container.querySelector(
-    "[data-testid=media-list-elemen-score]"
+    "[data-testid=media-list-element-score]"
   ).innerHTML
 
   expect(scoreProperty.indexOf(`${mediaObj.score}`) > -1).toBe(true)
@@ -56,7 +56,7 @@ test("should display the details property ", () => {
     )
 
   let detailsProperty = container.querySelector(
-    "[data-testid=media-list-elemen-details]"
+    "[data-testid=media-list-element-details]"
   ).textContent
 
   expect(detailsProperty.indexOf(mediaObj.text) > -1).toBe(true)
@@ -71,7 +71,7 @@ test("should display the track-id property ", () => {
     )
 
   const trackIdProperty = container.querySelector(
-    "[data-testid=media-list-elemen-track-id]"
+    "[data-testid=media-list-element-track-id]"
   ).textContent
 
   expect(trackIdProperty.indexOf(mediaObj.trackId) > -1).toBe(true)
@@ -85,7 +85,7 @@ test("should display the src property ", () => {
       </Provider>
     )
 
-  const srcProperty = container.querySelector("[data-testid=media-list-elemen-src]")
+  const srcProperty = container.querySelector("[data-testid=media-list-element-src]")
     .textContent
 
   expect(srcProperty.indexOf(mediaObj.src.id) > -1).toBe(true)

@@ -76,17 +76,31 @@ class MediaListElement extends Component {
       <li className="media-list_element">
         {this.renderImgHolder()}
 
-        <h3 className="sub-title sub-title-sm">Name: {this.props.mediaData.name}</h3>
-        <p className="text">Score: {this.props.mediaData.score}</p>
-        <p className="text">Details: {this.props.mediaData.text}</p>
-        <p className="text">Track ID: {this.props.mediaData.trackId}</p>
+        <h3 data-testid="media-list-element-name" className="sub-title sub-title-sm">
+          Name: {this.props.mediaData.name}
+        </h3>
+        <p data-testid="media-list-element-score" className="text">
+          Score: {this.props.mediaData.score}
+        </p>
+        <p data-testid="media-list-element-details" className="text">
+          Details: {this.props.mediaData.text}
+        </p>
+        <p data-testid="media-list-element-track-id" className="text">
+          Track ID: {this.props.mediaData.trackId}
+        </p>
 
         {this.props.mediaData.src && (
-          <p className="text">Video url: {this.props.mediaData.src.id}</p>
+          <p data-testid="media-list-element-src" className="text">
+            Video url: {this.props.mediaData.src.id}
+          </p>
         )}
         {this.props.mediaData.src && (
           <div>
-            <button className="cta" onClick={() => this.handleClickToggleVideo()}>
+            <button
+              data-testid="list-element-cta"
+              className="cta"
+              onClick={() => this.handleClickToggleVideo()}
+            >
               {this.state.ctaLabel} video
             </button>
           </div>
