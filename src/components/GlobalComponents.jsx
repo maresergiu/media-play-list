@@ -5,7 +5,9 @@ import Loader from "./Loader.jsx"
 const GlobalComponents = () => {
   return (
     <React.Fragment>
-      <Loader />
+      <div data-testid="global-components">
+        <Loader />
+      </div>
     </React.Fragment>
   )
 }

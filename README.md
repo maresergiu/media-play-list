@@ -8,6 +8,8 @@ In order to install the app you have to run `npm i` twice:
 After both folders have their node_modules in the project root directory run `npm run start-app`.
 This command will start the app and the website API in the same time.
 
+The application is built with Redux and React Router.
+
 ## Available Scripts
 
 In the project directory, you can run:
