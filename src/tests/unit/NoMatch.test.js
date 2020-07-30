@@ -1,7 +1,7 @@
 import React from "react"
-import { Link, Route, Router, Switch } from 'react-router-dom'
+import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import NoMatch from "../../views/NoMatch.jsx"
 
 function renderWithRouter(
