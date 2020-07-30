@@ -1,14 +1,9 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./store/index";
-import HomePage from "./views/HomePage.jsx";
-import NoMatch from "./views/NoMatch.jsx";
+import React from "react"
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
+import { Provider } from "react-redux"
+import store from "./store/index"
+import HomePage from "./views/HomePage.jsx"
+import NoMatch from "./views/NoMatch.jsx"
 
 function App() {
   return (
@@ -25,7 +20,7 @@ function App() {
         </Switch>
       </Router>
     </Provider>
-  );
+  )
 }
 
-export default App;
+export default App
