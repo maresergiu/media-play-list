@@ -1,71 +1,70 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import MediaList from "../../components/MediaList.jsx";
+import React from "react"
+import { render } from "@testing-library/react"
+import MediaList from "../../components/MediaList.jsx"
 import { Provider } from "react-redux"
-import store from "../../store/index";
-import mockedData from "../../helpers/mockedData";
+import store from "../../store/index"
+import mockedData from "../../helpers/mockedData"
 
 test("should display the MediaList", () => {
-    const { getByTestId } = render(
-        <Provider store={store}>
-            <MediaList
-                mediaList={mockedData.mediaList} />
-        </Provider>);
+  const { getByTestId } = render(
+    <Provider store={store}>
+      <MediaList mediaList={mockedData.mediaList} />
+    </Provider>
+  )
 
-    const mediaListComponent = getByTestId("media-list");
+  const mediaListComponent = getByTestId("media-list")
 
-    expect(mediaListComponent).toBeInTheDocument();
-});
+  expect(mediaListComponent).toBeInTheDocument()
+})
 
 test("should hold the MediaListElement", async () => {
-    const { container } = render(
-        <Provider store={store}>
-            <MediaList
-                mediaList={mockedData.mediaList} />
-        </Provider>);
+  const { container } = render(
+    <Provider store={store}>
+      <MediaList mediaList={mockedData.mediaList} />
+    </Provider>
+  )
 
-    let mediaListElement = null
+  let mediaListElement = null
 
-    mediaListElement = container.querySelectorAll(".media-list_element");
+  mediaListElement = container.querySelectorAll(".media-list_element")
 
-    expect(mediaListElement !== null).toBe(true);
-});
+  expect(mediaListElement !== null).toBe(true)
+})
 
 test("should display all the elements from the array", () => {
-    const { container } = render(
-        <Provider store={store}>
-            <MediaList
-                mediaList={mockedData.mediaList} />
-        </Provider>);
+  const { container } = render(
+    <Provider store={store}>
+      <MediaList mediaList={mockedData.mediaList} />
+    </Provider>
+  )
 
-    const mediaListElement = container.querySelectorAll("li");
+  const mediaListElement = container.querySelectorAll("li")
 
-    expect(mediaListElement.length === 20).toBe(true);
-});
+  expect(mediaListElement.length === 20).toBe(true)
+})
 
 test("should display the title", () => {
-    const { container, getByTestId } = render(
-        <Provider store={store}>
-            <MediaList
-                title="Test title"
-                mediaList={mockedData.mediaList} />
-        </Provider>);
+  const { container, getByTestId } = render(
+    <Provider store={store}>
+      <MediaList title="Test title" mediaList={mockedData.mediaList} />
+    </Provider>
+  )
 
-    const mediaListComponent = getByTestId("media-list"),
-        subTitle = getByTestId("media-list-sub-title");
+  const mediaListComponent = getByTestId("media-list"),
+    subTitle = getByTestId("media-list-sub-title")
 
-    expect(mediaListComponent).toContainElement(subTitle);
-});
+  expect(mediaListComponent).toContainElement(subTitle)
+})
 
 test("should display the title with the value `Test title list`", () => {
-    const { container } = render(
-        <Provider store={store}>
-            <MediaList
-                title="Test title"
-                mediaList={mockedData.mediaList} />
-        </Provider>);
+  const { container } = render(
+    <Provider store={store}>
+      <MediaList title="Test title" mediaList={mockedData.mediaList} />
+    </Provider>
+  )
 
-    const subTitle = container.querySelector("[data-testid=media-list-sub-title]").innerHTML;
+  const subTitle = container.querySelector("[data-testid=media-list-sub-title]")
+    .innerHTML
 
-    expect(subTitle).toBe("Test title list");
-});
+  expect(subTitle).toBe("Test title list")
+})

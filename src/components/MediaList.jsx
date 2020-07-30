@@ -7,9 +7,9 @@ class MediaList extends Component {
   render() {
     return (
       <div data-testid="media-list">
-        <h2
-          className="sub-title"
-          data-testid="media-list-sub-title">{this.props.title} list</h2>
+        <h2 className="sub-title" data-testid="media-list-sub-title">
+          {this.props.title} list
+        </h2>
         <ul>
           {this.props.mediaList.map((el) => {
             return <MediaListElement key={el._id} mediaData={el} />

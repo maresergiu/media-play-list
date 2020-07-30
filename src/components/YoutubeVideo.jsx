@@ -59,7 +59,7 @@ class YouTubeVideo extends Component {
       this.loadVideo()
     }
 
-    const { watch } = this.props;
+    const { watch } = this.props
   }
 
   componentWillReceiveProps(nextProps) {
