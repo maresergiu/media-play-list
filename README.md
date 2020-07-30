@@ -1,10 +1,14 @@
 ## How to install the project
-In order to install the app you have to run ``npm i`` twice:
-1. run ``npm i`` in the root directory
-1. run ``npm i`` in the /api directory
 
-After both folders have their node_modules in the project root directory run ``npm run start-app``.
+In order to install the app you have to run `npm i` twice:
+
+1. run `npm i` in the root directory
+1. run `npm i` in the /api directory
+
+After both folders have their node_modules in the project root directory run `npm run start-app`.
 This command will start the app and the website API in the same time.
+
+The application is built with Redux and React Router.
 
 ## Available Scripts
 
@@ -13,8 +17,9 @@ In the project directory, you can run:
 ### `npm run start-app`
 
 Runs the app in the development mode.<br />
- - opens [http://localhost:3000](http://localhost:3000) to view it in the browser.
- - init the website API [http://localhost:3001](http://localhost:3001)
+
+- opens [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- init the website API [http://localhost:3001](http://localhost:3001)
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
