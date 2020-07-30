@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { showLoader, hideLoader } from "../store/loader/actions";
 import openwwhydMethods from "../helpers/openwwhyd";
+import mockedData from "../helpers/mockedData";
 import GlobalComponents from "../components/GlobalComponents.jsx";
 import MediaList from "../components/MediaList.jsx";
 
@@ -17,7 +18,7 @@ class HomePage extends Component {
             <div className="home-page">
                 <div className="holder">
                     <h2 className="sub-title">Home page!</h2>
-                    <p className="text">{this.httpMessage}</p>
+                    <p className="text">{this.state.httpMessage}</p>
                     <MediaList
                         title="Electro"
                         mediaList={this.state.mediaList} />
@@ -36,13 +37,20 @@ class HomePage extends Component {
 
         this.props.hideLoader();
 
-        if (logInResult.data && hotListResult.data) {
-            this.setState({ mediaList: hotListResult.data.tracks })
-            this.setState({ httpStatus: "success" })
-            this.setState({ httpMessage: "" });
+        if (logInResult.hasOwnProperty("data") && hotListResult.hasOwnProperty("data")) {
+            this.setState({
+                mediaList: hotListResult.data.tracks,
+                httpStatus: "success",
+                httpMessage: ""
+            });
         } else {
-            this.setState({ httpStatus: "error" })
-            this.setState({ httpMessage: "Something went wrong. Please refresh the browser." })
+            const mediaListArray = Array.isArray(mockedData.mediaList) ? mockedData.mediaList : [];
+
+            this.setState({
+                mediaList: mediaListArray,
+                httpStatus: "error",
+                httpMessage: "The couldn't access the API data, but don't worry we have a back-up."
+            });
         }
     }
 }

@@ -2,21 +2,32 @@
 
 .media-list {
     &_element {
+        display: inline-block;
+        vertical-align: top;
         overflow: hidden;
+        width: 50%;
+
+        @media only screen and (max-width: $breakpointMobile) {
+            width: 100%;
+        }
+
+        & .cta {
+            min-width: 120px;
+        }
     }
 
     &_element:nth-child(odd) {
-        display: inline-block;
-        vertical-align: top;
-        width: 50%;
         padding: 0 20px 20px 0;
     }
 
     &_element:nth-child(even) {
-        display: inline-block;
-        vertical-align: top;
-        width: 50%;
         padding: 0 0 20px 20px;
+    }
+
+    &_element:nth-child(n) {
+        @media only screen and (max-width: $breakpointMobile) {
+            padding: 0 0 20px 0;
+        }
     }
 
     &_element-img-holder {
@@ -30,6 +41,7 @@
     &_element-video-holder {
         position: absolute;
         z-index: -1;
+        opacity: 0;
         top: 0;
         left: 0;
         width: 100%;
@@ -38,12 +50,14 @@
 
         &.show {
             z-index: 2;
+            opacity: 1;
         }
 
         & iframe {
             width: 100%;
             position: relative;
             top: 50%;
+            height: 100%;
             transform: translateY(-50%);
         }
     }

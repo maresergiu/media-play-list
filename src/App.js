@@ -5,11 +5,8 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-
 import { Provider } from "react-redux";
-
 import store from "./store/index";
-
 import HomePage from "./views/HomePage.jsx";
 import NoMatch from "./views/NoMatch.jsx";
 

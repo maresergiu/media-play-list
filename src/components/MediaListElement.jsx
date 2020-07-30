@@ -7,15 +7,43 @@ class MediaListElement extends Component {
     state = {
         youtubeId: "",
         showVideo: false,
-        ctaLabel: "show"
+        ctaLabel: "show",
+        pauseVideo: 0
+    }
+
+    setYoutubeId() {
+        const youtubeId = this.props.mediaData.src ? dataFilter.extractYoutubeId(this.props.mediaData.src.id) : this.props.mediaData.src;
+
+        this.setState({ youtubeId });
+    }
+
+    setPauseYoutubeVideo() {
+        const pauseVideo = this.state.pauseVideo + 1;
+
+        this.setState({ pauseVideo });
+    }
+
+    setCtaLabel() {
+        const ctaLabel = this.state.ctaLabel === "show" ? "hide" : "show";
+        this.setState({ ctaLabel });
+    }
+
+    handleClickToggleVideo() {
+        this.setState({ showVideo: !this.state.showVideo });
+        this.setCtaLabel();
+        this.setPauseYoutubeVideo();
     }
 
     renderVideo() {
-        console.log('render video')
         if (this.props.mediaData.src) {
             return (
                 <div className={this.state.showVideo ? "media-list_element-video-holder show" : "media-list_element-video-holder"}>
-                    <YoutubeVideo youtubeId={this.state.youtubeId} id={this.props.mediaData.uId} playVideoOnLoad={false} />
+                    <YoutubeVideo
+                        youtubeId={this.state.youtubeId}
+                        id={this.props.mediaData.uId}
+                        playVideoOnLoad={false}
+                        pauseVideo={this.state.pauseVideo}
+                        videoVisibility={this.state.showVideo} />
                 </div>
             )
         }
@@ -33,17 +61,6 @@ class MediaListElement extends Component {
         }
     }
 
-    setYoutubeId() {
-        const youtubeId = this.props.mediaData.src ? dataFilter.extractYoutubeId(this.props.mediaData.src.id) : this.props.mediaData.src;
-
-        this.setState({ youtubeId });
-    }
-
-    handleClickToggleVideo() {
-        this.setState({ showVideo: !this.state.showVideo })
-        this.setState({ ctaLabel: "hide" })
-    }
-
     render() {
         return (
             <li className="media-list_element">
@@ -55,6 +72,7 @@ class MediaListElement extends Component {
                 <p className="text">Score: {this.props.mediaData.score}</p>
                 <p className="text">Details: {this.props.mediaData.text}</p>
                 <p className="text">Track ID: {this.props.mediaData.trackId}</p>
+
                 {
                     this.props.mediaData.src
                     &&

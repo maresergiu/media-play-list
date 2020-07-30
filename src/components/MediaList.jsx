@@ -4,7 +4,6 @@ import MediaListElement from "./MediaListElement.jsx";
 import "../scss/components/media-list.scss";
 
 class MediaList extends Component {
-    state = {}
     render() {
         return (
             <React.Fragment>
