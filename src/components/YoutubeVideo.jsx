@@ -58,8 +58,6 @@ class YouTubeVideo extends Component {
       // If script is already there, load the video directly
       this.loadVideo()
     }
-
-    const { watch } = this.props
   }
 
   componentWillReceiveProps(nextProps) {
