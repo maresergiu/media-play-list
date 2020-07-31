@@ -9,6 +9,7 @@ After both folders have their node_modules in the project root directory run `np
 This command will start the app and the website API in the same time.
 
 ## About the app
+
 The application is built with React, Redux and React Router.
 
 Libraries I have used:
