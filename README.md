@@ -1,14 +1,27 @@
 ## How to install the project
 
-In order to install the app you have to run `npm i` twice:
+In order to install the app you have to run `npm i` in the following places:
 
-1. run `npm i` in the root directory
-1. run `npm i` in the /api directory
+1. run `npm i` in the root directory - to install the react app
+1. run `npm i` in the /api directory - to instal the API
 
-After both folders have their node_modules in the project root directory run `npm run start-app`.
+After both folders have their node_modules in the project root directory run `npm run start-app` in the root directory.
 This command will start the app and the website API in the same time.
 
-The application is built with Redux and React Router.
+## About the app
+The application is built with React, Redux and React Router.
+
+Libraries I have used:
+
+axios - to make http request
+concurrently - to run multiple npm script in the same time
+dotenv - for env variables
+node-sass - scss
+prop-types - for type check
+eslint-config-prettie - for linting
+eslint-plugin-prettier - for linting
+history - to simulate the browser history
+prettier - formater
 
 ## Available Scripts
 
@@ -24,10 +37,13 @@ Runs the app in the development mode.<br />
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs all the apps tests.
+
+### `npm run format`
+
+Does a linting on all the files with the extension js, jsx and json.
 
 ### `npm run build`
 
